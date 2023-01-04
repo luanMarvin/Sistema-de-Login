@@ -1,0 +1,290 @@
+/*Fonts*/
+
+@import url("./fonts.css");
+
+/*Global Changes*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #2a303b;
+}
+
+/*Header*/
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5% 0 20% 0;
+}
+
+#login-icon{
+    max-width: 8%;
+    margin: 0 0 0 10%;
+}
+
+#page-title{
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 20% 0 1%;
+}
+
+.header-pages{
+    font-family: 'Roboto', sans-serif;
+    color: #c1c4ca;
+    font-size:  0.7rem;
+    margin: 0 0 0 10% ;
+    font-weight: 400;
+}
+
+/*HEADER DESKTOP*/
+
+@media (min-width: 700px){
+    header{
+        display: flex;
+        justify-content: center;
+        margin: 20px 0 70px 0;
+    }
+    
+    #login-icon{
+        max-width: 4%;
+        margin: 0 0 0 4%;
+    }
+    
+    #page-title{
+        font-family: 'Roboto', sans-serif;
+        text-decoration: none;
+        color: #FFF;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 0 20% 0 1%;
+    }
+    
+    .header-pages{
+        font-family: 'Roboto', sans-serif;
+        color: #c1c4ca;
+        font-size:  1rem;
+        font-weight: 400;
+    }
+}
+
+/*Main*/
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#welcome-div{
+    margin: 0 0 10px 0;
+}
+
+#welcome-div h1{
+    color: #FFF;
+    font-size:  2.1rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 0 2% 0;
+}
+
+#welcome-div h2{
+    color: #c1c4ca;
+    font-size:  0.8rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 0 2% 0;
+}
+
+#welcome-div h3{
+    color: #c1c4ca;
+    font-size:  1rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 0 2% 0;
+}
+
+#sign-in{
+    display: flex;
+    align-items: baseline;
+}
+
+#sign-in a{
+    text-decoration: none;
+    color: #20a4db;
+    font-size:  1rem;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 1%;
+    font-weight: 600;
+    text-indent: 5px;
+}
+
+#register-form{
+    position: relative;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#name-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input{
+    height: 50px;
+    width: 120%;
+    background-color: #323644;
+    color: #c4c6ca;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 10px;
+    text-indent: 10px;
+    margin: 0 0 10px 0;
+    outline: none;
+}
+
+#login-button{
+    background-color: #20a4db;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 35px;
+    height: 45px;
+    width: 100%;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 40px 20px rgb(32, 164, 219, 0.07);
+    margin: 0 0 50px 0;
+}
+
+#password{
+    margin: 0 0 40px 0;
+}
+
+/*Main DESKTOP CHANGES*/
+
+@media (min-width: 700px){
+    .form-input{
+        width: 100%;
+        font-size: 1.35;
+        text-indent: 20px;
+        margin: 0 0 10px 0;
+        height: 55px;
+    }
+
+    #welcome-div h1{
+        font-size: 2.6rem;
+    }
+
+    #welcome-div h2{
+        font-size: 1.1rem;
+    }
+
+    #welcome-div h3{
+        font-size: 1.4rem;
+    }
+
+    #sign-in a {
+        font-size:  1.3rem;
+    }
+
+    #name-form{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+
+    #login-button{
+        background-color: #20a4db;
+        color: #FFF;
+        font-family: 'Roboto', sans-serif;
+        border: none;
+        border-radius: 35px;
+        height: 50px;
+        width: 85%;
+        font-size: 1.2rem;
+        box-shadow: 2px 2px 40px 20px rgb(32, 164, 219, 0.07);
+        margin: 0 0 50px 0;
+    }
+    
+}
+
+/*Form*/
+
+#first-name{
+    background-image: url("../imgs/id.svg");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: 92.5%;
+    font-size: 0.9rem;
+    text-indent: 15px;
+}
+
+#second-name{
+    background-image: url("../imgs/id.svg");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: 92.5%;
+    font-size: 0.9rem;
+    text-indent: 15px;
+}
+
+#email{
+    background-image: url("../imgs/mail.svg");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: 92.5%;
+    font-size: 0.9rem;
+    text-indent: 15px;
+}
+
+#password{
+    background-image: url("../imgs/open-eye.svg");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: 92.5%;
+    font-size: 0.9rem;
+    text-indent: 15px;
+}
+
+
+@media (min-width: 700px){
+    #first-name{
+        background-image: url("../imgs/id.svg");
+        background-repeat: no-repeat;
+        background-size: 14%;
+        background-position: 90%;
+        margin: 0 10px 0 0;
+        font-size: 1rem;
+    }
+    
+    #second-name{
+        background-image: url("../imgs/id.svg");
+        background-repeat: no-repeat;
+        background-size: 14%;
+        background-position: 90%;
+        font-size: 1rem;
+    }
+
+    #email{
+        background-image: url("../imgs/mail.svg");
+        background-repeat: no-repeat;
+        background-size: 7%;
+        background-position: 95%;
+        font-size: 1rem;
+    }
+
+    #password{
+        background-image: url("../imgs/open-eye.svg");
+        background-repeat: no-repeat;
+        background-size: 7%;
+        background-position: 95%;
+        font-size: 1rem;
+    }
+}
