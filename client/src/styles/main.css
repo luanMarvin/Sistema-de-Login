@@ -163,9 +163,6 @@ main{
     margin: 0 0 50px 0;
 }
 
-#password{
-    margin: 0 0 40px 0;
-}
 
 /*Main DESKTOP CHANGES*/
 
@@ -245,7 +242,7 @@ main{
 }
 
 #password{
-    background-image: url("../imgs/open-eye.svg");
+    background-image: url("../imgs/closed-eye.svg");
     background-repeat: no-repeat;
     background-size: 10%;
     background-position: 92.5%;
@@ -281,10 +278,23 @@ main{
     }
 
     #password{
-        background-image: url("../imgs/open-eye.svg");
+        background-image: url("../imgs/closed-eye.svg");
         background-repeat: no-repeat;
         background-size: 7%;
         background-position: 95%;
         font-size: 1rem;
     }
+}
+
+/*PASSWORDS*/
+
+#password-config{
+    display: flex;
+    justify-content: center;
+}
+#passwordVisibilityChangeButton{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #20a4db;
+    margin: 0 0 40px 0;
 }
