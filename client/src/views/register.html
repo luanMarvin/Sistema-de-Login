@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>LOGIN APP - Faça Login</title>
+    <link rel="icon" type="image/x-icon" href="../imgs/login-icon.svg">
+</head>
+<body>
+    <header>
+        <img id="login-icon" src="../imgs/login-icon.svg" alt="login-icon">
+        <a href="../../index.html" id="page-title">LOGIN APP</a>
+        <h2 class="header-pages">Home</h2>
+        <h2 class="header-pages">Conta</h2>
+    </header>
+    <main>
+        <div id="welcome-div">
+            <h2>BEM-VINDO DE VOLTA</h2>
+            <h1>ACESSE SUA CONTA</h1>
+            <div id="sign-in">
+                <h3>Ainda não é um membro ?</h3><a href="../../index.html">Cadastre</a>
+            </div>
+        </div>
+        <form id="register-form" action="" method="post">
+            <input name="email" class="form-input-login" id="email" placeholder="Email" type="text">
+            <input name="password" class="form-input-login" id="password" placeholder="Senha" type="password">
+            <div id="password-config">
+                <p id="passwordVisibilityChangeButton" onclick="showPassword()" >Mostrar Senha</p>
+            </div>
+            <button id="login-button" type="submit">ENTRAR</button>
+        </form>
+        <script src="./src/script/main.js"></script>
+    </main>
+</body>
+</html>

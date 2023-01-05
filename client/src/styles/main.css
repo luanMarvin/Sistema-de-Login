@@ -150,6 +150,19 @@ main{
     outline: none;
 }
 
+.form-input-login{
+    height: 50px;
+    width: 170%;
+    background-color: #323644;
+    color: #c4c6ca;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 10px;
+    text-indent: 10px;
+    margin: 0 0 10px 0;
+    outline: none;
+}
+
 #login-button{
     background-color: #20a4db;
     color: #FFF;
