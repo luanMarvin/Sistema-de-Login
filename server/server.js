@@ -1,4 +1,5 @@
 const express = require('express');
+const connect = require("./assets/database")
 
 const app = express();
 
