@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
 
-function connect(){
-    mongoURI = "mongodb://localhost:27017/products-database";
-    mongoose.connect(mongoURI);
-    const db = mongoose.connection
+function connect(URI){
+    mongoose.connect(URI);
+    const db = mongoose.connection;
 
 
-    db.once("open")
+    db.once("open", () => console.log(`Connectado ao banco de dados`));
 }
 
 module.exports = {connect};
