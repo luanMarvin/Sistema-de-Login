@@ -23,17 +23,17 @@
                 <h3>Já é um membro ?</h3><a href="./src/views/register.html">Faça Login</a>
             </div>
         </div>
-        <form id="register-form" action="/" method="post">
+        <form id="register-form">
             <div id="name-form">
-                <input name="first-name" class="form-input" id="first-name" placeholder="Primeiro Nome" type="text">
-                <input name="second-name" class="form-input" id="second-name" placeholder="Segundo Nome" type="text">
+                <input name="firstName" class="form-input" id="first-name" placeholder="Primeiro Nome" type="text">
+                <input name="surName" class="form-input" id="second-name" placeholder="Segundo Nome" type="text">
             </div>
             <input name="email" class="form-input" id="email" placeholder="Email" type="text">
             <input name="password" class="form-input" id="password" placeholder="Senha" type="password">
             <div id="password-config">
                 <p id="passwordVisibilityChangeButton" onclick="showPassword()" >Mostrar Senha</p>
             </div>
-            <button id="login-button" type="submit">Criar Conta</button>
+            <button id="login-button" onclick="registerNewUser()">Criar Conta</button>
         </form>
         <script src="./src/script/main.js"></script>
     </main>

@@ -19,12 +19,13 @@ header{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 5% 0 20% 0;
+    margin: 5% 0 50px 0;
 }
 
 #login-icon{
     max-width: 8%;
     margin: 0 0 0 10%;
+    width: 35px;
 }
 
 #page-title{
@@ -50,7 +51,7 @@ header{
     header{
         display: flex;
         justify-content: center;
-        margin: 20px 0 70px 0;
+        margin: 20px 0 90px 0;
     }
     
     #login-icon{

@@ -15,3 +15,27 @@ const hidePassword = () =>{
     passwordInput.style.backgroundImage = "url('../client/src/imgs/closed-eye.svg')";
 }
 
+function registerNewUser(){
+    const {
+        firstName,
+        surName,
+        email,
+        password
+    } = req.body
+    fetch("http://127.0.0.1:8080/api/users",
+    {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(
+            {
+                firstName,
+                surName,
+                email,
+                password
+            }
+        )
+    })
+}
