@@ -183,7 +183,7 @@ main{
 @media (min-width: 700px){
     .form-input{
         width: 100%;
-        font-size: 1.35;
+        font-size: 1rem;
         text-indent: 20px;
         margin: 0 0 10px 0;
         height: 55px;
