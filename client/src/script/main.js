@@ -1,5 +1,9 @@
 var passwordInput = document.getElementById("password");
 var passwordVisibilityChangeButton = document.getElementById("passwordVisibilityChangeButton");
+var firstNameInput = document.getElementById("first-name");
+var surnameInput = document.getElementById("surname");
+var emailInput = document.getElementById("email");
+var alertShow = document.getElementById("alertShow");
 
 const showPassword = () =>{
     passwordVisibilityChangeButton.setAttribute("onclick", "hidePassword()")
@@ -16,12 +20,6 @@ const hidePassword = () =>{
 }
 
 function registerNewUser(){
-    const {
-        firstName,
-        surName,
-        email,
-        password
-    } = req.body
     fetch("http://127.0.0.1:8080/api/users",
     {
         headers: {
@@ -38,4 +36,13 @@ function registerNewUser(){
             }
         )
     })
+}
+
+function verifyAndSend(){
+    if(passwordInput.value.length > 5 && firstNameInput.value.length > 0 && 
+        surnameInput.value.length > 0 && emailInput.value.length > 3){
+        console.log("approved")
+    } else {
+        alertShow.innerHTML = "É necessário registrar os dados acima de maneira correta"
+    }
 }
