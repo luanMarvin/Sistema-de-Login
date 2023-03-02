@@ -19,25 +19,6 @@ const hidePassword = () =>{
     passwordInput.style.backgroundImage = "url('../client/src/imgs/closed-eye.svg')";
 }
 
-function registerNewUser(){
-    fetch("http://127.0.0.1:8080/api/users",
-    {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify(
-            {
-                firstName,
-                surName,
-                email,
-                password
-            }
-        )
-    })
-}
-
 function verifyEmail(email){
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -46,7 +27,7 @@ function verifyEmail(email){
 function verifyPassword(password) {
     const regex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     return regex.test(password);
-  }
+}
 
   function verifyAndSend(){
     let verifiedEmail = verifyEmail(emailInput.value);
@@ -78,10 +59,11 @@ function verifyPassword(password) {
         .then(data => {
           if (data.success) {
             alertShow.innerHTML = "Usuário registrado com sucesso!";
+            console.log(data);
           } else if (data.error) {
             alertShow.innerHTML = "Ocorreu um erro ao registrar o usuário: " + data.error;
           } else {
-            alertShow.innerHTML = "Ocorreu um erro ao registrar o usuário.";
+            //Redirect
           }
         })
         .catch(error => {

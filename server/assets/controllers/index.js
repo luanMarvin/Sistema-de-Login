@@ -14,7 +14,6 @@ async function post(req, res){
         email,
         password
     });
-
     register.save();
     res.send(register);
 }
