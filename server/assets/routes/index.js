@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const UserController = require('../controllers');
-const cors = require('cors')
 
-router.post('/users', cors(), UserController.post)
+router.post('/users', UserController.post);
+router.get('/users/:email', UserController.getTestEmail);
+
 
 module.exports = router
