@@ -21,7 +21,6 @@ async function post(req, res){
 };
 
 async function getTestEmail(req, res){
-    console.log(req.params)
     const { email } = req.params
 
     const emailTest = email ? { email } : null
@@ -30,11 +29,10 @@ async function getTestEmail(req, res){
     
     const tryUserEmail = await UserModels.find(emailTest);
     //const tryUserPass = await UserModels.find(passTest);
-    if(tryUserEmail){
-        console.log(tryUserEmail)
+    if(tryUserEmail.length > 0){
         return res.send(tryUserEmail);
     } else {
-        return false;
+        res.sendStatus(404);
     }
 }
 
