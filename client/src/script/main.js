@@ -6,40 +6,51 @@ var emailInput = document.getElementById("email");
 var alertShow = document.getElementById("alertShow");
 
 const showPassword = () =>{
-    passwordVisibilityChangeButton.setAttribute("onclick", "hidePassword()")
+    passwordVisibilityChangeButton.setAttribute("onclick", "hidePassword()");
     passwordVisibilityChangeButton.innerHTML = "Esconder Senha";
     passwordInput.setAttribute("type", "text");
     passwordInput.style.backgroundImage = "url('../client/src/imgs/open-eye.svg')";
-}
+};
 
 const hidePassword = () =>{
     passwordVisibilityChangeButton.setAttribute("onclick", "showPassword()");
     passwordVisibilityChangeButton.innerHTML = "Mostrar Senha";
     passwordInput.setAttribute("type", "password");
     passwordInput.style.backgroundImage = "url('../client/src/imgs/closed-eye.svg')";
-}
+};
 
 function verifyEmail(email){
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
+  let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
 
 function verifyPassword(password) {
-    const regex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    let regex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     return regex.test(password);
-}
+};
 
-  function verifyAndSend(){
+async function verifyAndSend(){
+    result = await fetch(`http://127.0.0.1:8080/api/users/${email}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(`Data: ${data}`);
+      return data
+    });
     let verifiedEmail = verifyEmail(emailInput.value);
     let verifiedPassword = verifyPassword(passwordInput.value);
-
+    console.log(`verifiedPassword: ${verifiedPassword}`)
+    console.log(`firstNameInput: ${firstNameInput.value.length}`)
+    console.log(`surnameInput: ${surnameInput.value.length}`)
+    console.log(`verifiedEmail: ${verifiedEmail}`)
+    console.log(`result: ${result.length}`)
     if(verifiedPassword == true && firstNameInput.value.length > 0 && 
-        surnameInput.value.length > 0 && verifiedEmail == true){
+        surnameInput.value.length > 0 && verifiedEmail == true && result.length == 0){
             firstName = firstNameInput.value;
             surName = surnameInput.value;
             email = emailInput.value;
             password = passwordInput.value;
             data = {firstName, surName, email, password};
+            console.log("sucesso")
             fetch("http://127.0.0.1:8080/api/users",
         {
             headers: {
@@ -59,7 +70,6 @@ function verifyPassword(password) {
         .then(data => {
           if (data.success) {
             alertShow.innerHTML = "Usuário registrado com sucesso!";
-            console.log(data);
           } else if (data.error) {
             alertShow.innerHTML = "Ocorreu um erro ao registrar o usuário: " + data.error;
           } else {
@@ -70,6 +80,6 @@ function verifyPassword(password) {
           console.error('There was a problem with the fetch operation:', error);
         });
     } else {
-        alertShow.innerHTML = "É necessário registrar os dados acima de maneira correta"
+        alertShow.innerHTML = "É necessário registrar os dados acima de maneira correta";
     }
 }

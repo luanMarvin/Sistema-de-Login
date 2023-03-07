@@ -24,16 +24,9 @@ async function getTestEmail(req, res){
     const { email } = req.params
 
     const emailTest = email ? { email } : null
-    //const passTest = password ? { password } : null
-    
     
     const tryUserEmail = await UserModels.find(emailTest);
-    //const tryUserPass = await UserModels.find(passTest);
-    if(tryUserEmail.length > 0){
-        return res.send(tryUserEmail);
-    } else {
-        res.sendStatus(404);
-    }
+    res.send(tryUserEmail);
 }
 
 module.exports = {
