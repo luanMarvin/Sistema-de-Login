@@ -8,10 +8,10 @@ const app = express();
 
 //CORS
 const corsConfig = {
-    origin: 'http://127.0.0.1:5050',
+    origin: ['http://localhost:5500','http://127.0.0.1:5500'],
     optionsSuccessStatus: 200,
 };
-app.use(cors()); //CORS - Disabled
+app.use(cors(corsConfig)); //CORS - Disabled
 app.use(express.json()); //Parsing Middleware
 app.use('/api', router); //API routes
 

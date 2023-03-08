@@ -56,8 +56,7 @@ async function verifyAndSend(){
     fetch("http://127.0.0.1:8080/api/users",{
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'http://localhost:5500'
+        'Content-Type': 'application/json'
       },
         method: "POST",
         body: JSON.stringify(data)
