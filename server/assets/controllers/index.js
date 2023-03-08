@@ -1,7 +1,6 @@
 const UserModels = require("../models");
-const MongoClient = require('mongodb').MongoClient;
-const URI = "mongodb://localhost:27017/sistema-de-login";
 
+//Post Functions
 async function post(req, res){
     const {
         firstName,
@@ -16,17 +15,23 @@ async function post(req, res){
         email,
         password
     });
+
     register.save();
     res.send(register);
 };
 
+
+//Get Functions
 async function getTestEmail(req, res){
     const { email } = req.params
-
     const emailTest = email ? { email } : null
     
     const tryUserEmail = await UserModels.find(emailTest);
-    res.send(tryUserEmail);
+    if(tryUserEmail.length == 0){
+        res.send(true);
+    } else {
+        res.send(false);
+    }
 }
 
 module.exports = {

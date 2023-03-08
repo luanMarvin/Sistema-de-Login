@@ -3,23 +3,26 @@ const cors = require('cors');
 const connect = require('./assets/database');
 const router = require('./assets/routes');
 
-var corsConfig = {
-    origin: ["http://127.0.0.1:5500/"],
-    optionsSuccessStatus: 200
-};
-
+//App declaration
 const app = express();
-app.use(cors());
-app.use(express.json());
-app.use('/api', router);
 
+//CORS
+const corsConfig = {
+    origin: 'http://127.0.0.1:5050',
+    optionsSuccessStatus: 200,
+};
+app.use(cors()); //CORS - Disabled
+app.use(express.json()); //Parsing Middleware
+app.use('/api', router); //API routes
 
+//Database Connection
 const URI = "mongodb://localhost:27017/sistema-de-login";
 connect(URI);
 
 
-// --Port //
+//Port
 const port = process.env.PORT || 8080;
 app.listen(port, () =>{console.log(`Server is running at port ${port}`)});
 
+//Exports
 module.exports = URI
