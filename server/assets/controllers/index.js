@@ -1,25 +1,28 @@
 const UserModels = require("../models");
+const bcrypt = require('bcrypt')
 
 //Post Functions
-async function post(req, res){
+async function post(req, res) {
     const {
-        firstName,
-        surName,
-        email,
-        password
-    } = req.body
-
+      firstName,
+      surName,
+      email,
+      password
+    } = req.body;
+  
+    const hashedPassword = await bcrypt.hash(password, 10);
+  
     const register = new UserModels({
-        firstName,
-        surName,
-        email,
-        password
+      firstName,
+      surName,
+      email,
+      password: hashedPassword
     });
-
-    register.save();
+  
+    await register.save();
+  
     res.send(register);
-};
-
+  }
 
 //Get Functions
 async function getTestEmail(req, res){
