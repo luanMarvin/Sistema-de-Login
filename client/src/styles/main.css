@@ -125,6 +125,7 @@ main{
 }
 
 #register-form{
+    width: 100vw;
     position: relative;
     top: 2rem;
     display: flex;
@@ -133,14 +134,15 @@ main{
 }
 
 #name-form{
+    width: 80vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .form-input{
     height: 50px;
-    width: 120%;
     background-color: #323644;
     color: #c4c6ca;
     font-family: 'Roboto', sans-serif;
@@ -149,11 +151,25 @@ main{
     text-indent: 10px;
     margin: 0 0 10px 0;
     outline: none;
+    width: 230px;
+}
+
+.form-input-big{
+    height: 50px;
+    background-color: #323644;
+    color: #c4c6ca;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 10px;
+    text-indent: 10px;
+    margin: 0 0 10px 0;
+    outline: none;
+    width: 230px;
 }
 
 .form-input-login{
     height: 50px;
-    width: 170%;
+    width: 35%;
     background-color: #323644;
     color: #c4c6ca;
     font-family: 'Roboto', sans-serif;
@@ -171,7 +187,7 @@ main{
     border: none;
     border-radius: 35px;
     height: 45px;
-    width: 100%;
+    width: 35%;
     font-size: 1.2rem;
     box-shadow: 2px 2px 40px 20px rgb(32, 164, 219, 0.07);
     margin: 0 0 50px 0;
@@ -182,7 +198,15 @@ main{
 
 @media (min-width: 700px){
     .form-input{
-        width: 100%;
+        width: 200px;
+        font-size: 1rem;
+        text-indent: 20px;
+        margin: 0 0 10px 0;
+        height: 55px;
+    }
+    
+    .form-input-big{
+        width: 400px;
         font-size: 1rem;
         text-indent: 20px;
         margin: 0 0 10px 0;
@@ -218,7 +242,7 @@ main{
         border: none;
         border-radius: 35px;
         height: 50px;
-        width: 85%;
+        width: 35%;
         font-size: 1.2rem;
         box-shadow: 2px 2px 40px 20px rgb(32, 164, 219, 0.07);
         margin: 0 0 50px 0;
@@ -237,7 +261,7 @@ main{
     text-indent: 15px;
 }
 
-#second-name{
+#surname{
     background-image: url("../imgs/id.svg");
     background-repeat: no-repeat;
     background-size: 10%;
@@ -275,7 +299,7 @@ main{
         font-size: 1rem;
     }
     
-    #second-name{
+    #surname{
         background-image: url("../imgs/id.svg");
         background-repeat: no-repeat;
         background-size: 14%;
@@ -311,4 +335,27 @@ main{
     font-size: 1rem;
     color: #20a4db;
     margin: 0 0 40px 0;
+}
+
+/*ERRORS*/
+
+.input-area{
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-area-big{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.error-alert{
+    font-family: 'Roboto', sans-serif;
+    max-width: 100%;
+    color: #d4d4d4;
 }

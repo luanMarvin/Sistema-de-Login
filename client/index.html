@@ -25,15 +25,26 @@
         </div>
         <div id="register-form">
             <div id="name-form">
-                <input name="firstName" class="form-input" id="first-name" placeholder="Primeiro Nome" type="text">
-                <input name="surName" class="form-input" id="surname" placeholder="Segundo Nome" type="text">
+                <div class="input-area">
+                    <input name="firstName" class="form-input" id="first-name" placeholder="Primeiro Nome" type="text">
+                    <p id="firstNameAlert" class="error-alert"></p>
+                </div>
+                <div class="input-area">
+                    <input name="surName" class="form-input" id="surname" placeholder="Segundo Nome" type="text">
+                    <p id="surNameAlert" class="error-alert"></p>
+                </div>
             </div>
-            <input name="email" class="form-input" id="email" placeholder="Email" type="text">
-            <input name="password" class="form-input" id="password" placeholder="Senha" type="password">
+            <div class="input-area-big">
+                <input name="email" class="form-input-big" id="email" placeholder="Email" type="text">
+                <p id="emailAlert" class="error-alert"></p>
+            </div>
+            <div class="input-area-big">
+                <input name="password" class="form-input-big" id="password" placeholder="Senha" type="password">
+                <p id="passwordAlert" class="error-alert"></p>
+            </div>
             <div id="password-config">
                 <p id="passwordVisibilityChangeButton" onclick="showPassword()" >Mostrar Senha</p>
             </div>
-            <p id="alertShow"></p>
             <button id="login-button" onclick="verifyAndSend()" >Criar Conta</button>
         </div>
         <script src="./src/script/index.js"></script>

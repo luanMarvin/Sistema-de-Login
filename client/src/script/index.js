@@ -41,13 +41,41 @@ async function verifyDuplicatedEmail(email){
     })
 }
 
+function inputChecking(){
+  let verifiedEmail = verifyEmail(emailInput.value);
+  let verifiedPassword = verifyPassword(passwordInput.value);
+  if(verifiedPassword == false){
+    document.getElementById("passwordAlert").innerHTML = "A senha precisa conter pelo menos 1 Letra Maiuscula, 1 Letra Minuscula, 1 número e 1 caractere especial.";
+  } else {
+    document.getElementById("passwordAlert").innerHTML = "";
+  }
+  if(firstNameInput.value.length == 0){
+    document.getElementById("firstNameAlert").innerHTML = "Insira um nome válido!";
+  } else {
+    document.getElementById("firstNameAlert").innerHTML = "";
+  }
+  if(surnameInput.value.length == 0){
+    document.getElementById("surNameAlert").innerHTML = "Insira um sobrenome válido!";
+  } else {
+    document.getElementById("surNameAlert").innerHTML = "";
+  }
+  if(verifiedEmail == false){
+    document.getElementById("emailAlert").innerHTML = "Insira um Email válido.";
+  } else {
+    document.getElementById("emailAlert").innerHTML = "";
+  }
+}
+
 //Check all necessary inputs and send data to database if is correct
 async function verifyAndSend(){
+  inputChecking()
   let verifiedEmail = verifyEmail(emailInput.value);
   let verifiedPassword = await verifyPassword(passwordInput.value);
-  let verifiedDiplicatedEmail = await verifyDuplicatedEmail(emailInput.value);
+  let verifiedDuplicatedEmail = await verifyDuplicatedEmail(emailInput.value);
+  
+  //Errors
   if(verifiedPassword == true && firstNameInput.value.length > 0 && 
-    surnameInput.value.length > 0 && verifiedEmail == true && verifiedDiplicatedEmail == true){
+    surnameInput.value.length > 0 && verifiedEmail == true && verifiedDuplicatedEmail == true){
     firstName = firstNameInput.value;
     surName = surnameInput.value;
     email = emailInput.value;
@@ -65,11 +93,11 @@ async function verifyAndSend(){
         if (!response.ok) {
           throw new Error('Não foi Possivel se conectar');
         }
+          location.href = '/client/src/views/registered-successfully.html';
           return response.json();
       })
       .then(data => {
         if (data.success) {
-          //
         } else if (data.error) {
           //
         } else {
@@ -80,6 +108,8 @@ async function verifyAndSend(){
         console.error("Ocorreu um erro:", error);
       });
       } else {
-          alertShow.innerHTML = "É necessário registrar os dados acima de maneira correta";
+        if(verifiedDuplicatedEmail == false){
+          document.getElementById("emailAlert").innerHTML = "O email acima já foi cadastrado no sistema.";
+        }
       }
 }
