@@ -23,14 +23,14 @@
                 <h3>Ainda não é um membro ?</h3><a href="../../index.html">Cadastre</a>
             </div>
         </div>
-        <form id="register-form" action="" method="post">
+        <form id="register-form">
             <input name="email" class="form-input-login" id="email" placeholder="Email" type="text">
             <input name="password" class="form-input-login" id="password" placeholder="Senha" type="password">
             <div id="password-config">
                 <p id="passwordVisibilityChangeButton" onclick="showPassword()" >Mostrar Senha</p>
             </div>
-            <button id="login-button" type="submit">ENTRAR</button>
         </form>
+        <button id="login-button" onclick="login()">ENTRAR</button>
         <script src="../script/login.js"></script>
     </main>
 </body>

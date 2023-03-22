@@ -1,5 +1,7 @@
 var passwordVisibilityChangeButton = document.getElementById("passwordVisibilityChangeButton");
 var passwordInput = document.getElementById("password");
+var email = document.getElementById('email').value;
+var password = document.getElementById('password').value;
 
 
 //Change password visibility
@@ -16,3 +18,20 @@ const hidePassword = () =>{
     passwordInput.setAttribute("type", "password");
     passwordInput.style.backgroundImage = "url('../imgs/closed-eye.svg')";
 };
+
+//Login service
+async function login() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    const credentials = { email, password };
+    const response = await fetch('http://127.0.0.1:8080/api/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+    });
+    const data = await response.json();
+    return data.token;
+}
