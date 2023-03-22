@@ -7,8 +7,9 @@ async function access(req, res){
     const { email, password } = req.body;
     const user = await UserModels.findOne({ email });
 
-    const validatedPass = await bcrypt.compare(password, user.password);
-    if(!user){
+    if(user){
+        validatedPass = await bcrypt.compare(password, user.password);
+    } else {
         return res.status(404).send('User not found');
     }
 

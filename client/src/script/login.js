@@ -32,6 +32,10 @@ async function login() {
         },
         body: JSON.stringify(credentials)
     });
-    const data = await response.json();
-    return data.token;
+    if (response){
+        console.log('passed')
+        const data = await response.json();
+        localStorage.setItem('token', data);
+        window.location.href = '/client/src/views/profile.html';
+    }
 }
