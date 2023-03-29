@@ -11,7 +11,10 @@ async function getData(token) {
     })
     .then(response => response.json())
     .then(data => console.log(data))
-    .catch(error => console.error(error));
+    .catch(error => {
+      console.log(error);
+      window.location.href = '/client/src/views/logout.html';
+    });
   }
 
 getData(token);
