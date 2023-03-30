@@ -17,4 +17,9 @@ async function getData(token) {
     });
   }
 
+function logout(){
+  localStorage.clear();
+  window.location.href = '/client/src/views/logout.html';
+}
+
 getData(token);
