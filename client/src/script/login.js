@@ -3,7 +3,6 @@ var passwordInput = document.getElementById("password");
 var email = document.getElementById('email').value;
 var password = document.getElementById('password').value;
 
-
 //Change password visibility
 const showPassword = () =>{
     passwordVisibilityChangeButton.setAttribute("onclick", "hidePassword()");
@@ -33,9 +32,14 @@ async function login() {
         body: JSON.stringify(credentials)
     });
     if (response){
-        console.log('passed')
         const data = await response.json();
         localStorage.setItem('token', data);
         window.location.href = '/client/src/views/profile.html';
     }
 }
+
+//Redirect if token exist
+const token = localStorage.getItem('token');
+if(token){
+  location.href = '/client/src/views/profile.html';
+};

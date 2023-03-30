@@ -10,10 +10,14 @@ async function getData(token) {
       }
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+      console.log(data);
+      document.getElementById("first-name-title").innerHTML = data.firstName;
+      document.getElementById("surname-title").innerHTML = data.surName;
+      document.getElementById("email").innerHTML = data.email;
+    })
     .catch(error => {
-      console.log(error);
-      window.location.href = '/client/src/views/logout.html';
+      logout();
     });
   }
 
