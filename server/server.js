@@ -15,7 +15,7 @@ app.use(cors(corsConfig)); //CORS - Enabled
 app.use(express.json()); //Parsing Middleware
 app.use('/api', router); //API routes
 
-const URI = "mongodb://localhost:27017/sistema-de-login"; //Database URI
+const URI = "mongodb://127.0.0.1:27017/sistema-de-login"; //Database URI
 connect(URI);
 
 
