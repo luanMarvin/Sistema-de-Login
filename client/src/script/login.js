@@ -31,7 +31,15 @@ async function login() {
         },
         body: JSON.stringify(credentials)
     });
-    if (response){
+    if(response.status === 404){
+        document.getElementById("emailAlert").innerHTML = 'Email Inválido';
+    } else {
+        document.getElementById("emailAlert").innerHTML = '';
+    }
+    if(response.status === 401){
+        document.getElementById("passwordAlert").innerHTML = 'Senha Incorreta';
+    }
+    if (response.status === 200){
         const data = await response.json();
         localStorage.setItem('token', data);
         window.location.href = '/client/src/views/profile.html';

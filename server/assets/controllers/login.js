@@ -16,7 +16,7 @@ async function access(req, res){
     }
 
     if(!validatedPass){
-        return res.status(401).send('Invalid credentials');
+        return res.status(401).send('Invalid Credentials');
     }
 
     if(user && validatedPass){
