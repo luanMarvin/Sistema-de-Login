@@ -14,7 +14,7 @@ async function getData(token) {
       console.log(data);
       document.getElementById("first-name-title").innerHTML = data.firstName;
       document.getElementById("surname-title").innerHTML = data.surName;
-      document.getElementById("email").innerHTML = data.email;
+      document.getElementById("email-title").innerHTML = data.email;
     })
     .catch(error => {
       logout();
