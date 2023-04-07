@@ -114,6 +114,28 @@ async function verifyAndSend(){
       }
 }
 
+//FETCH BY ENTER KEY PRESSING
+firstNameInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    verifyAndSend();
+  }
+});
+surnameInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    verifyAndSend();
+  }
+});
+emailInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    verifyAndSend();
+  }
+});
+passwordInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    verifyAndSend();
+  }
+});
+
 //Redirect if token exist
 const token = localStorage.getItem('token');
 if(token){

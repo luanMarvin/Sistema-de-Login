@@ -46,6 +46,18 @@ async function login() {
     }
 }
 
+//FETCH BY ENTER KEY PRESSING
+document.getElementById('email').addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      login();
+    }
+});
+document.getElementById('password').addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      login();
+    }
+});
+
 //Redirect if token exist
 const token = localStorage.getItem('token');
 if(token){
