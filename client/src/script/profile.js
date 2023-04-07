@@ -1,5 +1,6 @@
 const token = localStorage.getItem('token');
 
+//Receive data from server
 async function getData(token) {
     fetch('http://127.0.0.1:8080/api/autenticated', {
       method: 'GET',
@@ -21,9 +22,11 @@ async function getData(token) {
     });
   }
 
+//Simply logout
 function logout(){
   localStorage.clear();
   window.location.href = '/client/src/views/logout.html';
 }
 
+//Run when pages load
 getData(token);

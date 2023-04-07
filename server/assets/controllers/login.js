@@ -3,8 +3,10 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 
+//Generate key for jwt
 const generatedCrypto = crypto.randomBytes(64).toString('hex');
 
+//Verify credentials - Email and Pass
 async function access(req, res){
     const { email, password } = req.body;
     const user = await UserModels.findOne({ email });
@@ -25,6 +27,7 @@ async function access(req, res){
     }
 }
 
+//Verify credentials (token) and send data to be consumed
 async function auth(req, res){
     const token = req.headers.authorization?.split(' ')[1];
     const { id } = jwt.verify(token, generatedCrypto);

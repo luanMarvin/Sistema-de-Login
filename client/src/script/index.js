@@ -5,7 +5,6 @@ var surnameInput = document.getElementById("surname");
 var emailInput = document.getElementById("email");
 var alertShow = document.getElementById("alertShow");
 
-
 //Change password visibility
 const showPassword = () =>{
     passwordVisibilityChangeButton.setAttribute("onclick", "hidePassword()");
@@ -41,6 +40,7 @@ async function verifyDuplicatedEmail(email){
     })
 }
 
+//Check if input's are okay
 function inputChecking(){
   let verifiedEmail = verifyEmail(emailInput.value);
   let verifiedPassword = verifyPassword(passwordInput.value);
@@ -95,14 +95,6 @@ async function verifyAndSend(){
         }
           location.href = '/client/src/views/registered-successfully.html';
           return response.json();
-      })
-      .then(data => {
-        if (data.success) {
-        } else if (data.error) {
-          //
-        } else {
-          //
-        }
       })
       .catch(error => {
         console.error("Ocorreu um erro:", error);

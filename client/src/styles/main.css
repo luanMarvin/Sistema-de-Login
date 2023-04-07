@@ -341,12 +341,13 @@ main{
 #password-config{
     display: flex;
     justify-content: center;
+    margin: 0 0 30px 0;
 }
 #passwordVisibilityChangeButton{
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: #20a4db;
-    margin: 0 0 40px 0;
+    margin: 0 0 20px 0;
 }
 
 /*ERRORS*/
