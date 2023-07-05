@@ -23,3 +23,10 @@ Problemas como: Portas erradas (tanto no Mongo, tanto quanto no Client-side), UR
 Basicamente é importante que a página com os dados do usuário só possa ser vista por um usuário autenticado(e é essa autentificação que garante q os dados sejam recebidos de forma correta).
 
 Esse sistema conta com uso de tokens, requisições HTTP, uso de banco de dados, criptografia de senhas, criptografia de dados importantes para o servidor(key para jsonwebtoken) e um visual simples para suprir as necessidades do usuário. É um projeto com foco no back-end e realizado inteiramente por Luan Marvin com objetivo apenas de estudo e prática.
+
+### Tecnologias usadas
+CORS
+EXPRESS
+MONGODB
+HTML & CSS
+Tokens
